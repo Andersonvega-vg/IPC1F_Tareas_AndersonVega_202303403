@@ -19,32 +19,38 @@ public class Tarea2 {
     char genero = ' ';
     boolean registro = true;
     
-        System.out.println("Ingrese el número de camiseta");
+        System.out.print("Ingrese el numero de camiseta: ");
         numeroCamiseta = sc.nextInt();
         
-        System.out.println("Ingrese la edad");
+        System.out.print("Ingrese la edad: ");
         edad = sc.nextInt();
         
-        System.out.println("Ingrese la altura (m)");
+        System.out.print("Ingrese la altura (m): ");
         altura = sc.nextDouble();
         
-        System.out.println("Ingrese el género H(hombre)/M(mujer)");
+        System.out.print("Ingrese el genero H(hombre)/M(mujer): ");
         genero = sc.next().charAt(0);
         
         //VALIDACIONES
-        if (edad >= 18 && edad <= 60) {
-            registro = true;
-            System.out.println("Edad válida");
-        }else{
+        if (numeroCamiseta <1 || numeroCamiseta >99) {
+          registro = false;  
+        }
+        if (edad <18 || edad >60) {
             registro = false;
-            System.out.println("Edad no válida");
         }
-        
-        if (genero == 'H' || genero == 'M') {
-            System.out.println("Genero válido");
+         if (altura <=0) {
+            registro = false;
+        }
+          if (genero != 'H' && genero != 'M') {
+            registro = false;
+        }
+          if (registro == true) {
+              System.out.println("=====Registro Exitoso=====");
         }else{
-            System.out.println("Género no valido");
-        }
-                
+              System.out.println("=====Datos no validos=====");
+          }
+      
+
+    //FIN MAIN      
     }
 }
